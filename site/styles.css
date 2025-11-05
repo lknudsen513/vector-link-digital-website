@@ -20,6 +20,19 @@ body {
   line-height: 1.6;
 }
 
+.logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
 /* ---- REUSABLE ELEMENTS ---- */
 section {
   padding: 80px 10%;
