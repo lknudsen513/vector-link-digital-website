@@ -9,7 +9,7 @@
 
 const CONFIG = {
     // ** REPLACE THIS WITH YOUR POWER AUTOMATE FLOW HTTP ENDPOINT **
-    powerAutomateEndpoint: 'YOUR_POWER_AUTOMATE_FLOW_URL_HERE',
+    powerAutomateEndpoint: 'https://defaultd0b33a9da17844a29bc8068e3a67e8.ec.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/4924f036d7bb469b8c4b82378604f9dd/triggers/manual/paths/invoke?api-version=1',
     
     // Form validation rules
     validation: {
