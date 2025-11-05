@@ -63,7 +63,7 @@
                         <a href="#results" class="nav__link">Results</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link nav__link--cta">Get Started</a>
+                        <a href="#contact" class="nav__link nav__link--cta" data-modal-trigger>Get Started</a>
                     </li>
                 </ul>
             </nav>
@@ -84,7 +84,7 @@
                         Vector Link Digital helps small and mid-sized manufacturers turn disconnected SaaS tools into a powerful, integrated ecosystem. We bridge the gap between your CRM, ERP, and operations data — unlocking automation, visibility, and smarter decision-making.
                     </p>
                     <div class="hero__actions">
-                        <a href="#contact" class="btn btn--primary">Schedule a Free Consultation</a>
+                        <button class="btn btn--primary" data-modal-trigger>Schedule a Free Consultation</button>
                     </div>
                     <p class="hero__tagline">
                         Practical solutions. Real outcomes. No consulting fluff.
@@ -118,7 +118,7 @@
                             <strong>Vector Link Digital steps in to make these tools work for you, not against you.</strong>
                             We connect your systems, automate workflows, and bring data and AI into your daily operations — so your technology actually delivers on its promise.
                         </p>
-                        <a href="#services" class="btn btn--secondary">Un-Muck My Systems</a>
+                        <button class="btn btn--secondary" data-modal-trigger>Un-Muck My Systems</button>
                     </div>
                 </div>
             </div>
@@ -188,7 +188,7 @@
                 </div>
                 
                 <div class="services__cta">
-                    <a href="#contact" class="btn btn--primary">Let's Build Something That Works</a>
+                    <button class="btn btn--primary" data-modal-trigger>Let's Build Something That Works</button>
                 </div>
             </div>
         </section>
@@ -203,7 +203,7 @@
                 <div class="about__content">
                     <div class="about__story">
                         <p class="about__paragraph">
-                            I'm <strong>Lauren</strong>, founder of Vector Link Digital.
+                            I'm <strong>Lauren Knudsen</strong>, founder of Vector Link Digital.
                         </p>
                         <p class="about__paragraph">
                             After more than 12 years in consulting and private equity operations — helping organizations implement technology, connect data, and drive efficiency — I saw a gap.
@@ -291,7 +291,7 @@
                 </header>
                 
                 <div class="contact__cta">
-                    <a href="mailto:info@vectorlinkdigital.com" class="btn btn--primary btn--large">Schedule a Free Consultation</a>
+                    <button class="btn btn--primary btn--large" data-modal-trigger>Schedule a Free Consultation</button>
                 </div>
                 
                 <div class="contact__info">
@@ -308,7 +308,7 @@
                             <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
                             <circle cx="4" cy="4" r="2"/>
                         </svg>
-                        <a href="https://www.linkedin.com/in/lauren-knudsen-tech/" target="_blank" rel="noopener noreferrer" class="contact__link">LinkedIn: Lauren Knudsen</a>
+                        <a href="https://www.linkedin.com/in/lauren-knudsen" target="_blank" rel="noopener noreferrer" class="contact__link">LinkedIn: Lauren Knudsen</a>
                     </div>
                 </div>
             </div>
@@ -351,7 +351,7 @@
                 <div class="footer__column">
                     <h4 class="footer__heading">Get In Touch</h4>
                     <p class="footer__text">Ready to connect your systems?</p>
-                    <a href="mailto:info@vectorlinkdigital.com" class="btn btn--footer">Email Us</a>
+                    <button class="btn btn--footer" data-modal-trigger>Email Us</button>
                 </div>
             </div>
             
@@ -367,5 +367,136 @@
         </div>
     </footer>
     
+    <!-- CONTACT MODAL -->
+    <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal__overlay" data-modal-close></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title" id="modalTitle">Let's Connect Your Systems</h2>
+                <button class="modal__close" data-modal-close aria-label="Close modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal__body">
+                <p class="modal__description">
+                    Fill out the form below and we'll get back to you within 24 hours to discuss your integration needs.
+                </p>
+                
+                <form id="contactForm" class="modal-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">
+                                First Name <span class="form-required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="firstName" 
+                                name="firstName" 
+                                class="form-input" 
+                                required 
+                                aria-required="true">
+                            <span class="form-error" id="firstName-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input 
+                                type="text" 
+                                id="lastName" 
+                                name="lastName" 
+                                class="form-input">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                Email <span class="form-required">*</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                required 
+                                aria-required="true">
+                            <span class="form-error" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                class="form-input"
+                                placeholder="555-123-4567">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description" class="form-label">
+                            How can we help? <span class="form-required">*</span>
+                        </label>
+                        <textarea 
+                            id="description" 
+                            name="description" 
+                            class="form-input form-textarea" 
+                            rows="5" 
+                            required 
+                            aria-required="true"
+                            placeholder="Tell us about your integration challenges..."></textarea>
+                        <span class="form-error" id="description-error"></span>
+                    </div>
+                    
+                    <div class="modal__actions">
+                        <button type="button" class="btn btn--secondary" data-modal-close>Cancel</button>
+                        <button type="submit" class="btn btn--primary" id="submitBtn">
+                            <span class="btn__text">Send Request</span>
+                            <span class="btn__loader" style="display: none;">
+                                <svg class="spinner" viewBox="0 0 50 50">
+                                    <circle class="spinner-path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Success Message -->
+                <div class="modal__success" id="successMessage" style="display: none;">
+                    <div class="success-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="success-title">Request Sent Successfully!</h3>
+                    <p class="success-message">Thank you for reaching out. We'll review your request and get back to you within 24 hours.</p>
+                    <button type="button" class="btn btn--primary" data-modal-close>Close</button>
+                </div>
+                
+                <!-- Error Message -->
+                <div class="modal__error" id="errorMessage" style="display: none;">
+                    <div class="error-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3 class="error-title">Something Went Wrong</h3>
+                    <p class="error-message">We couldn't send your request. Please try again or email us directly at info@vectorlinkdigital.com</p>
+                    <button type="button" class="btn btn--primary" id="retryBtn">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
