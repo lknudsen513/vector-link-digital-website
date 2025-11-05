@@ -10,7 +10,7 @@
 const CONFIG = {
     // ** PASTE YOUR POWER AUTOMATE HTTP POST URL HERE **
     // Make sure it's the FULL URL with sp= and sig= parameters!
-    powerAutomateEndpoint: 'YOUR_COMPLETE_POWER_AUTOMATE_URL_HERE',
+    powerAutomateEndpoint: 'https://defaultd0b33a9da17844a29bc8068e3a67e8.ec.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/4924f036d7bb469b8c4b82378604f9dd/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IDopDJmfkycPKcmF875YQJwXO_J4NefVDemzKRacG8U',
     
     validation: {
         email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
