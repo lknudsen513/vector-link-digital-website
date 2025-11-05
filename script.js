@@ -1,6 +1,6 @@
 /**
- * Vector Link Digital - Contact Form with Power Automate Integration
- * Professional Modal System with Form Validation
+ * Vector Link Digital - Contact Form with Power Automate
+ * Optimized for Power Automate HTTP Triggers
  */
 
 // ============================================
@@ -8,22 +8,19 @@
 // ============================================
 
 const CONFIG = {
-    // ** REPLACE THIS WITH YOUR POWER AUTOMATE FLOW HTTP ENDPOINT **
-    powerAutomateEndpoint: 'https://defaultd0b33a9da17844a29bc8068e3a67e8.ec.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/4924f036d7bb469b8c4b82378604f9dd/triggers/manual/paths/invoke?api-version=1',
+    // ** PASTE YOUR POWER AUTOMATE HTTP POST URL HERE **
+    // Make sure it's the FULL URL with sp= and sig= parameters!
+    powerAutomateEndpoint: 'YOUR_COMPLETE_POWER_AUTOMATE_URL_HERE',
     
-    // Form validation rules
     validation: {
         email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
         phone: /^[\d\s\-\+\(\)]+$/
     },
     
-    // UI Messages
     messages: {
         required: 'This field is required',
         invalidEmail: 'Please enter a valid email address',
-        invalidPhone: 'Please enter a valid phone number',
-        submitError: 'Unable to send your request. Please try again or contact us directly.',
-        networkError: 'Network error. Please check your connection and try again.'
+        invalidPhone: 'Please enter a valid phone number'
     }
 };
 
@@ -44,7 +41,7 @@ class ContactModal {
     }
     
     init() {
-        // Modal triggers (all CTA buttons)
+        // Modal triggers
         document.querySelectorAll('[data-modal-trigger]').forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -52,53 +49,42 @@ class ContactModal {
             });
         });
         
-        // Modal close triggers
+        // Close triggers
         document.querySelectorAll('[data-modal-close]').forEach(closeBtn => {
             closeBtn.addEventListener('click', () => this.close());
         });
         
-        // Close on ESC key
+        // ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.modal.classList.contains('is-active')) {
                 this.close();
             }
         });
         
-        // Form submission
+        // Form submit
         this.form.addEventListener('submit', (e) => {
             e.preventDefault();
             this.handleSubmit();
         });
         
-        // Retry button
+        // Retry
         if (this.retryBtn) {
-            this.retryBtn.addEventListener('click', () => {
-                this.showForm();
-            });
+            this.retryBtn.addEventListener('click', () => this.showForm());
         }
         
-        // Real-time validation
         this.setupRealtimeValidation();
     }
     
     open() {
         this.modal.classList.add('is-active');
         document.body.classList.add('modal-open');
-        
-        // Focus first input
-        setTimeout(() => {
-            document.getElementById('firstName').focus();
-        }, 100);
+        setTimeout(() => document.getElementById('firstName').focus(), 100);
     }
     
     close() {
         this.modal.classList.remove('is-active');
         document.body.classList.remove('modal-open');
-        
-        // Reset form after animation
-        setTimeout(() => {
-            this.reset();
-        }, 300);
+        setTimeout(() => this.reset(), 300);
     }
     
     reset() {
@@ -127,12 +113,8 @@ class ContactModal {
     
     setupRealtimeValidation() {
         const inputs = this.form.querySelectorAll('.form-input');
-        
         inputs.forEach(input => {
-            input.addEventListener('blur', () => {
-                this.validateField(input);
-            });
-            
+            input.addEventListener('blur', () => this.validateField(input));
             input.addEventListener('input', () => {
                 if (input.classList.contains('is-invalid')) {
                     this.validateField(input);
@@ -149,25 +131,21 @@ class ContactModal {
         let isValid = true;
         let errorMessage = '';
         
-        // Required field validation
         if (field.hasAttribute('required') && !value) {
             isValid = false;
             errorMessage = CONFIG.messages.required;
         }
         
-        // Email validation
         if (fieldName === 'email' && value && !CONFIG.validation.email.test(value)) {
             isValid = false;
             errorMessage = CONFIG.messages.invalidEmail;
         }
         
-        // Phone validation (if provided)
         if (fieldName === 'phone' && value && !CONFIG.validation.phone.test(value)) {
             isValid = false;
             errorMessage = CONFIG.messages.invalidPhone;
         }
         
-        // Update UI
         if (isValid) {
             field.classList.remove('is-invalid');
             if (errorElement) errorElement.textContent = '';
@@ -182,62 +160,70 @@ class ContactModal {
     validateForm() {
         const inputs = this.form.querySelectorAll('.form-input[required]');
         let isValid = true;
-        
         inputs.forEach(input => {
-            if (!this.validateField(input)) {
-                isValid = false;
-            }
+            if (!this.validateField(input)) isValid = false;
         });
-        
         return isValid;
     }
     
     clearErrors() {
         const inputs = this.form.querySelectorAll('.form-input');
         const errors = this.form.querySelectorAll('.form-error');
-        
         inputs.forEach(input => input.classList.remove('is-invalid'));
         errors.forEach(error => error.textContent = '');
     }
     
     async handleSubmit() {
-        // Validate form
-        if (!this.validateForm()) {
-            // Scroll to first error
-            const firstError = this.form.querySelector('.is-invalid');
-            if (firstError) {
-                firstError.focus();
-            }
+        console.log('🚀 Form submission started...');
+        
+        // Check configuration
+        if (CONFIG.powerAutomateEndpoint.includes('YOUR_COMPLETE_POWER_AUTOMATE')) {
+            console.error('❌ Power Automate endpoint not configured');
+            alert('Configuration Error: Please update the Power Automate endpoint in script.js');
             return;
         }
         
-        // Get form data
+        // Validate
+        if (!this.validateForm()) {
+            console.log('❌ Validation failed');
+            const firstError = this.form.querySelector('.is-invalid');
+            if (firstError) firstError.focus();
+            return;
+        }
+        
+        // Prepare data - EXACTLY matching Power Automate schema
         const formData = {
             firstName: document.getElementById('firstName').value.trim(),
             lastName: document.getElementById('lastName').value.trim(),
             email: document.getElementById('email').value.trim(),
             phone: document.getElementById('phone').value.trim(),
-            description: document.getElementById('description').value.trim()
+            description: document.getElementById('description').value.trim(),
+            timestamp: new Date().toISOString()
         };
         
-        // Show loading state
+        console.log('📦 Form data:', formData);
+        console.log('📡 Endpoint:', CONFIG.powerAutomateEndpoint);
+        
         this.setLoading(true);
         
         try {
-            // Send to Power Automate
             const response = await fetch(CONFIG.powerAutomateEndpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify(formData)
             });
             
-            if (response.ok) {
-                // Success!
+            console.log('📨 Response status:', response.status);
+            
+            // Power Automate returns 200 or 202 for success
+            if (response.ok || response.status === 202) {
+                console.log('✅ Success!');
                 this.showSuccess();
                 
-                // Optional: Track conversion (Google Analytics, etc.)
+                // Analytics
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'form_submission', {
                         event_category: 'Contact',
@@ -245,10 +231,22 @@ class ContactModal {
                     });
                 }
             } else {
-                throw new Error('Server error');
+                // Log the full error for debugging
+                const errorText = await response.text();
+                console.error('❌ Server error:', response.status, errorText);
+                
+                // Check for specific Power Automate errors
+                if (response.status === 401) {
+                    console.error('🔐 Authentication Error - Flow requires authentication');
+                    console.error('Solution: Make sure your Power Automate HTTP trigger allows anonymous access');
+                } else if (response.status === 403) {
+                    console.error('🚫 Forbidden - Check Power Automate flow permissions');
+                }
+                
+                this.showError();
             }
         } catch (error) {
-            console.error('Form submission error:', error);
+            console.error('❌ Network error:', error);
             this.showError();
         } finally {
             this.setLoading(false);
@@ -272,23 +270,21 @@ class ContactModal {
 }
 
 // ============================================
-// INITIALIZE ON PAGE LOAD
+// INITIALIZE
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
     new ContactModal();
-    
-    console.log('✅ Vector Link Digital - Contact system initialized');
+    console.log('✅ Vector Link Digital contact form initialized');
+    console.log('⚡ Using Power Automate for form submission');
 });
 
 // ============================================
-// ACCESSIBILITY ENHANCEMENTS
+// ACCESSIBILITY
 // ============================================
 
-// Trap focus within modal when open
 document.addEventListener('keydown', (e) => {
     const modal = document.querySelector('.modal.is-active');
-    
     if (!modal || e.key !== 'Tab') return;
     
     const focusableElements = modal.querySelectorAll(
