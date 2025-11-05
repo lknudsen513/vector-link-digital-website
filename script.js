@@ -177,11 +177,11 @@ class ContactModal {
         console.log('🚀 Form submission started...');
         
         // Check configuration
-        if (CONFIG.powerAutomateEndpoint.includes('YOUR_COMPLETE_POWER_AUTOMATE')) {
-            console.error('❌ Power Automate endpoint not configured');
-            alert('Configuration Error: Please update the Power Automate endpoint in script.js');
-            return;
-        }
+       // if (CONFIG.powerAutomateEndpoint.includes('YOUR_COMPLETE_POWER_AUTOMATE')) {
+            //console.error('❌ Power Automate endpoint not configured');
+            //alert('Configuration Error: Please update the Power Automate endpoint in script.js');
+            //return;
+        //}
         
         // Validate
         if (!this.validateForm()) {
