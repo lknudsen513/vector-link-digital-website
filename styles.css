@@ -584,6 +584,12 @@ ul, ol {
     margin: 0;
 }
 
+/* Override for dark backgrounds (Contact section) */
+.contact .section-header__title,
+.contact .section-header__description {
+    color: var(--color-white);
+}
+
 /* ============================================
    8. CHALLENGE SECTION
    ============================================ */
@@ -636,7 +642,7 @@ ul, ol {
 
 .services__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
     margin-bottom: var(--space-8);
 }
@@ -648,6 +654,10 @@ ul, ol {
     border-radius: var(--radius-lg);
     border: 2px solid var(--color-border-light);
     transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .service-card:hover {
@@ -678,34 +688,50 @@ ul, ol {
 .service-card__subtitle {
     font-size: var(--font-size-base);
     color: var(--color-text-secondary);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
     font-weight: var(--font-weight-medium);
 }
 
 .service-card__list {
     list-style: none;
     padding: 0;
+    text-align: left;
+    width: 100%;
 }
 
 .service-card__list li {
     position: relative;
     padding-left: var(--space-4);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
     color: var(--color-text-secondary);
     line-height: var(--line-height-relaxed);
 }
 
 .service-card__list li::before {
-    content: '✓';
+    content: '•';
     position: absolute;
-    left: 0;
+    left: var(--space-2);
     color: var(--color-primary);
     font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
 }
 
 .services__cta {
     text-align: center;
     margin-top: var(--space-8);
+}
+
+/* Responsive Grid for Services */
+@media (max-width: 1024px) {
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services__grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ============================================
@@ -723,7 +749,7 @@ ul, ol {
 }
 
 .about__story {
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-10);
 }
 
 .about__paragraph {
@@ -731,6 +757,10 @@ ul, ol {
     color: var(--color-text-secondary);
     margin-bottom: var(--space-4);
     line-height: var(--line-height-relaxed);
+}
+
+.about__paragraph:last-child {
+    margin-bottom: 0;
 }
 
 .about__paragraph strong {
@@ -741,13 +771,13 @@ ul, ol {
 /* Value Cards */
 .about__values {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-4);
-    margin-top: var(--space-8);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-10);
 }
 
 .value-card {
-    padding: var(--space-5);
+    padding: var(--space-6);
     background-color: var(--color-white);
     border-radius: var(--radius-lg);
     text-align: center;
@@ -775,6 +805,14 @@ ul, ol {
 .value-card__description {
     color: var(--color-text-secondary);
     line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-base);
+}
+
+/* Responsive for Value Cards */
+@media (max-width: 768px) {
+    .about__values {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ============================================
@@ -788,7 +826,7 @@ ul, ol {
 
 .results__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
     margin-bottom: var(--space-8);
 }
@@ -831,8 +869,21 @@ ul, ol {
     font-size: var(--font-size-lg);
     color: var(--color-text-secondary);
     max-width: 800px;
-    margin: 0 auto;
+    margin: var(--space-8) auto 0;
     line-height: var(--line-height-relaxed);
+}
+
+/* Responsive for Results */
+@media (max-width: 1024px) {
+    .results__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .results__grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ============================================
@@ -895,21 +946,22 @@ ul, ol {
 
 .footer__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-6);
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: var(--space-8);
     margin-bottom: var(--space-8);
 }
 
 .footer__column {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-2);
 }
 
 .footer__title {
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     color: white;
+    margin-bottom: var(--space-2);
 }
 
 .footer__title-accent {
@@ -925,7 +977,7 @@ ul, ol {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
     color: white;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
 }
 
 .footer__list {
@@ -937,6 +989,7 @@ ul, ol {
 .footer__link {
     color: var(--color-gray-light);
     transition: color var(--transition-fast);
+    font-size: var(--font-size-base);
 }
 
 .footer__link:hover {
@@ -947,14 +1000,15 @@ ul, ol {
     color: var(--color-gray-light);
     font-size: var(--font-size-sm);
     margin-bottom: var(--space-2);
+    line-height: var(--line-height-normal);
 }
 
 /* Footer Bottom */
 .footer__bottom {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: var(--space-3);
     padding-top: var(--space-6);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -969,10 +1023,22 @@ ul, ol {
     gap: var(--space-4);
 }
 
-@media (min-width: 768px) {
+/* Responsive Footer */
+@media (max-width: 1024px) {
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+    
     .footer__bottom {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: var(--space-3);
+        text-align: center;
     }
 }
 
