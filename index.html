@@ -1,77 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vector Link Digital | SaaS, Data & AI Consulting for Manufacturing</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vector Link Digital helps small and mid-sized manufacturers integrate SaaS tools, automate workflows, and unlock data insights for real business results.">
+    <meta name="keywords" content="system integration, manufacturing automation, CRM integration, ERP integration, Salesforce, NetSuite, Power BI, business automation">
+    <meta name="author" content="Lauren Knudsen - Vector Link Digital">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Vector Link Digital - System Integration for Manufacturing">
+    <meta property="og:description" content="Connecting your systems, processes, and data to drive real business results">
+    <meta property="og:type" content="website">
+    
+    <title>Vector Link Digital | System Integration & Automation for Manufacturing</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
-    <!-- Header / Hero Section -->
-    <header class="hero">
-        <div class="container header-content">
-            <img src="vectorlink_logo.png" alt="Vector Link Digital Logo" class="logo" />
-            <h1>Unlock the Power of SaaS, Data, and AI</h1>
-            <p>Helping small and mid-sized manufacturing companies connect their business systems and turn data into growth.</p>
-            <a href="#contact" class="cta-button">Let’s Connect</a>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header Section -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <div class="nav__brand">
+                    <a href="#home" class="nav__logo" aria-label="Vector Link Digital homepage">
+                        <span class="nav__logo-text">Vector Link <span class="nav__logo-accent">Digital</span></span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle (CSS-only) -->
+                <input type="checkbox" id="nav-toggle" class="nav__toggle" aria-label="Toggle navigation menu">
+                <label for="nav-toggle" class="nav__toggle-label">
+                    <span class="nav__hamburger" aria-hidden="true"></span>
+                </label>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav__menu">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#challenge" class="nav__link">The Challenge</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#results" class="nav__link">Results</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link nav__link--cta">Get Started</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
-
-    <!-- About Section -->
-    <section class="about container">
-        <h2>Who We Are</h2>
-        <p>
-            At <strong>Vector Link Digital</strong>, we help manufacturing and industrial companies realize the full potential of their business applications. 
-            Many small and mid-sized firms invest in powerful platforms like NetSuite, Salesforce, and Microsoft 365 — but never unlock their full value.
-        </p>
-        <p>
-            We close that gap. Instead of basic IT outsourcing, we deliver <strong>business-enabling solutions</strong> that integrate your SaaS tools, 
-            automate workflows, and turn data into actionable insight.
-        </p>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <h2>What We Do</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>SaaS Integration</h3>
-                    <p>Connect your ERP, CRM, and data tools to streamline operations and eliminate manual work.</p>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 id="hero-heading" class="hero__title">
+                        Connecting Your Systems, Processes, and Data to Drive <span class="hero__title-highlight">Real Business Results</span>
+                    </h1>
+                    <p class="hero__description">
+                        Vector Link Digital helps small and mid-sized manufacturers turn disconnected SaaS tools into a powerful, integrated ecosystem. We bridge the gap between your CRM, ERP, and operations data — unlocking automation, visibility, and smarter decision-making.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#contact" class="btn btn--primary">Schedule a Free Consultation</a>
+                    </div>
+                    <p class="hero__tagline">
+                        Practical solutions. Real outcomes. No consulting fluff.
+                    </p>
                 </div>
-                <div class="service-card">
-                    <h3>Data & AI Enablement</h3>
-                    <p>Build data pipelines, dashboards, and AI-driven insights that empower decision-making.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Project & Retainer Consulting</h3>
-                    <p>We partner with you — on retainer or by project — to deliver measurable business outcomes.</p>
+                <div class="hero__visual" aria-hidden="true">
+                    <div class="hero__graphic">
+                        <!-- Manufacturing/tech visual placeholder -->
+                        <div class="hero__graphic-overlay"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Value Proposition -->
-    <section class="values container">
-        <h2>Our Promise</h2>
-        <p>
-            Your success is our metric. If you’re not realizing measurable savings or value from our work, we haven’t done our job. 
-            Every engagement is aligned to your business outcomes — not just deliverables.
-        </p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Ready to explore how Vector Link Digital can help your business grow?</p>
-            <a href="mailto:hello@vectorlinkdigital.com" class="cta-button">Contact Us</a>
-        </div>
-    </section>
-
+        </section>
+        
+        <!-- The Challenge Section -->
+        <section id="challenge" class="challenge" aria-labelledby="challenge-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="challenge-heading" class="section-header__title">SaaS Promised Simplicity. You Got Complexity.</h2>
+                </header>
+                
+                <div class="challenge__content">
+                    <p class="challenge__text">
+                        You've invested in leading platforms — Salesforce, NetSuite, Microsoft 365, and more — each with the promise of solving your business challenges.
+                    </p>
+                    <p class="challenge__text">
+                        But instead of working together, they've created data silos, duplicate processes, and frustrated teams.
+                    </p>
+                    <div class="challenge__solution">
+                        <p class="challenge__solution-text">
+                            <strong>Vector Link Digital steps in to make these tools work for you, not against you.</strong>
+                            We connect your systems, automate workflows, and bring data and AI into your daily operations — so your technology actually delivers on its promise.
+                        </p>
+                        <a href="#services" class="btn btn--secondary">Un-Muck My Systems</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="services" aria-labelledby="services-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="services-heading" class="section-header__title">Services That Simplify, Streamline, and Scale Your Business</h2>
+                    <p class="section-header__description">
+                        We combine deep SaaS expertise with a practical, no-nonsense approach. Whether you're cleaning up existing systems or ready to connect everything for the first time — we build solutions that deliver measurable value.
+                    </p>
+                </header>
+                
+                <div class="services__grid">
+                    <!-- Service Card 1: Automation -->
+                    <article class="service-card">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Automation</h3>
+                        <p class="service-card__subtitle">Eliminate repetitive tasks and manual data entry.</p>
+                        <ul class="service-card__list">
+                            <li>Workflow automation between ERP, CRM, and production systems</li>
+                            <li>Smart triggers for order approvals, scheduling, and reporting</li>
+                            <li>Power Automate and RPA tool integrations</li>
+                        </ul>
+                    </article>
+                    
+                    <!-- Service Card 2: System Configuration -->
+                    <article class="service-card">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">System Configuration</h3>
+                        <p class="service-card__subtitle">Make your SaaS tools fit your business — not the other way around.</p>
+                        <ul class="service-card__list">
+                            <li>Custom configuration for CRMs, ERPs, and productivity apps</li>
+                            <li>Process mapping and tailored workflows</li>
+                            <li>Fix what your implementation partner left unfinished</li>
+                        </ul>
+                    </article>
+                    
+                    <!-- Service Card 3: Data & AI Integration -->
+                    <article class="service-card">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Data & AI Integration</h3>
+                        <p class="service-card__subtitle">Turn your data into a strategic advantage.</p>
+                        <ul class="service-card__list">
+                            <li>Unify systems for real-time insights</li>
+                            <li>Power BI dashboards that tell your story</li>
+                            <li>Practical AI applications for forecasting and process optimization</li>
+                        </ul>
+                    </article>
+                </div>
+                
+                <div class="services__cta">
+                    <a href="#contact" class="btn btn--primary">Let's Build Something That Works</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about" aria-labelledby="about-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="about-heading" class="section-header__title">Built from Experience. Driven by Results.</h2>
+                </header>
+                
+                <div class="about__content">
+                    <div class="about__story">
+                        <p class="about__paragraph">
+                            I'm <strong>Lauren Knudsen</strong>, founder of Vector Link Digital.
+                        </p>
+                        <p class="about__paragraph">
+                            After more than 12 years in consulting and private equity operations — helping organizations implement technology, connect data, and drive efficiency — I saw a gap.
+                            Smaller companies were buying the same world-class SaaS platforms as the big players, but without dedicated IT teams to integrate and evolve them.
+                        </p>
+                        <p class="about__paragraph">
+                            That's why I started Vector Link Digital — to help businesses like yours actually realize the value of the tools you already own.
+                        </p>
+                        <p class="about__paragraph">
+                            I focus on what matters: understanding your business, simplifying complexity, and delivering solutions that work. No endless slide decks or vague "digital transformation" talk — just results.
+                        </p>
+                    </div>
+                    
+                    <div class="about__values">
+                        <div class="value-card">
+                            <div class="value-card__icon" aria-hidden="true">🤝</div>
+                            <h3 class="value-card__title">Trusted Partner</h3>
+                            <p class="value-card__description">I learn your business before recommending solutions.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-card__icon" aria-hidden="true">⚙️</div>
+                            <h3 class="value-card__title">Outcome-Focused</h3>
+                            <p class="value-card__description">If you're not seeing value, I haven't done my job.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-card__icon" aria-hidden="true">💡</div>
+                            <h3 class="value-card__title">Hands-On Delivery</h3>
+                            <p class="value-card__description">Strategy meets execution — I build what I design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Results Section (Proof in Action) -->
+        <section id="results" class="results" aria-labelledby="results-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="results-heading" class="section-header__title">From Frustration to Flow — Real Results</h2>
+                </header>
+                
+                <div class="results__grid">
+                    <article class="result-card">
+                        <div class="result-card__metric">80%</div>
+                        <h3 class="result-card__title">Reduction in Manual Entry</h3>
+                        <p class="result-card__description">
+                            Integrated Salesforce and NetSuite to eliminate duplicate order processing
+                        </p>
+                    </article>
+                    
+                    <article class="result-card">
+                        <div class="result-card__metric">10+ hrs</div>
+                        <h3 class="result-card__title">Saved Per Week</h3>
+                        <p class="result-card__description">
+                            Automated production and financial reporting workflows
+                        </p>
+                    </article>
+                    
+                    <article class="result-card">
+                        <div class="result-card__metric">Real-Time</div>
+                        <h3 class="result-card__title">Forecasting Enabled</h3>
+                        <p class="result-card__description">
+                            Connected shop floor data to Power BI dashboards
+                        </p>
+                    </article>
+                </div>
+                
+                <p class="results__footer">
+                    These aren't abstract improvements — they're measurable gains that let your team focus on what they do best: building great products and serving customers.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="contact-heading" class="section-header__title">Let's Turn Your Technology Into a Competitive Advantage</h2>
+                    <p class="section-header__description">
+                        Your business has already invested in powerful tools. Now it's time to connect them.<br>
+                        Let's start with a short conversation — no sales pitch, just practical next steps to make your systems work better together.
+                    </p>
+                </header>
+                
+                <div class="contact__cta">
+                    <a href="mailto:info@vectorlinkdigital.com" class="btn btn--primary btn--large">Schedule a Free Consultation</a>
+                </div>
+                
+                <div class="contact__info">
+                    <div class="contact__item">
+                        <svg class="contact__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <a href="mailto:info@vectorlinkdigital.com" class="contact__link">info@vectorlinkdigital.com</a>
+                    </div>
+                    
+                    <div class="contact__item">
+                        <svg class="contact__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        <a href="https://www.linkedin.com/in/lauren-knudsen" target="_blank" rel="noopener noreferrer" class="contact__link">LinkedIn: Lauren Knudsen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Vector Link Digital. All rights reserved.</p>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3 class="footer__title">Vector Link <span class="footer__title-accent">Digital</span></h3>
+                    <p class="footer__description">
+                        Empowering manufacturing through technology. Connecting systems, automating processes, and unlocking data insights for real business results.
+                    </p>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="#challenge" class="footer__link">The Challenge</a></li>
+                        <li><a href="#services" class="footer__link">Services</a></li>
+                        <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#results" class="footer__link">Results</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__heading">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="#services" class="footer__link">Automation</a></li>
+                        <li><a href="#services" class="footer__link">System Configuration</a></li>
+                        <li><a href="#services" class="footer__link">Data & AI Integration</a></li>
+                        <li><a href="#contact" class="footer__link">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__heading">Get In Touch</h4>
+                    <p class="footer__text">Ready to connect your systems?</p>
+                    <a href="mailto:info@vectorlinkdigital.com" class="btn btn--footer">Email Us</a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Vector Link Digital — Empowering Manufacturing Through Technology
+                </p>
+                <ul class="footer__legal">
+                    <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer__link">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
+    
 </body>
 </html>
